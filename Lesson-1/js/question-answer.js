@@ -19,21 +19,21 @@ const answers = [
   "воду",
 ];
 
-function getRandomArrayValue(arr) {
-  const randomIndex = Math.floor(Math.random() * arr.length);
-  return arr[randomIndex];
-}
-
-function createRandomQuestionAndAnswers(numAnswers) {
-  const randomQuestion = getRandomArrayValue(questions);
+function getRandomArrayValue(arr, numAnswers = 1) {
   const randomAnswers = [];
 
   for (let i = 0; i < numAnswers; i++) {
-    const randomAnswer = getRandomArrayValue(answers);
-    randomAnswers.push(randomAnswer);
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    randomAnswers.push(arr[randomIndex]);
   }
+  
+  return randomAnswers.join(", ");
+}
 
-  return `${randomQuestion}: ${randomAnswers.join(", ")}`;
+function createRandomQuestionAndAnswers(numAnswers = 1) {
+  const randomQuestion = getRandomArrayValue(questions);
+  const randomAnswers = getRandomArrayValue(answers, numAnswers);
+  return `${randomQuestion}: ${randomAnswers}`;
 }
 
 const questionAndAnswers = createRandomQuestionAndAnswers(3);
