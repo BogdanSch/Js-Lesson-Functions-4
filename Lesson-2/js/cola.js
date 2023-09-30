@@ -10,7 +10,7 @@ let products = [
   { name: "Root Beer", calories: 200, color: "caramel", sold: 9909 },
   { name: "Water", calories: 0, color: "clear", sold: 62123 },
 ];
-function printProducts(products) {
+const printProducts = (products) => {
   for (let i = 0; i < products.length; i++) {
     console.log(
       "Name: " +
@@ -25,14 +25,15 @@ function printProducts(products) {
     );
   }
   console.log("\n");
-}
+};
 
-function compareName(colaA, colaB, isReverse = false) {
+const compareName = (colaA, colaB, isReverse = false) => {
   const result =
     colaA.name < colaB.name ? -1 : colaA.name === colaB.name ? 0 : 1;
   return isReverse ? -result : result;
-}
-function compareCalories(colaA, colaB, isReverse = false) {
+};
+
+const compareCalories = (colaA, colaB, isReverse = false) => {
   const result =
     colaA.calories < colaB.calories
       ? -1
@@ -40,17 +41,19 @@ function compareCalories(colaA, colaB, isReverse = false) {
       ? 0
       : 1;
   return isReverse ? -result : result;
-}
-function compareColor(colaA, colaB, isReverse = false) {
+};
+
+const compareColor = (colaA, colaB, isReverse = false) => {
   const result =
     colaA.color < colaB.color ? -1 : colaA.color === colaB.color ? 0 : 1;
   return isReverse ? -result : result;
-}
-function compareSold(colaA, colaB, isReverse = false) {
+};
+
+const compareSold = (colaA, colaB, isReverse = false) => {
   const result =
     colaA.sold < colaB.sold ? -1 : colaA.sold === colaB.sold ? 0 : 1;
   return isReverse ? -result : result;
-}
+};
 
 console.log("Array: ");
 printProducts(products);
