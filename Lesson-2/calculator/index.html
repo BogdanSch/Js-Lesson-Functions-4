@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+    <section class="calculator">
+        <div class="container">
+            <div class="calculator__wrap">
+                <div class="row">
+                    <div class="input-form col s12">
+                        <h1>Math Expressions Calculator</h1>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Enter your expression: " id="expressionValue" type="text"
+                                    class="input-expression validate">
+                                <label for="expressionValue">Expression here: </label>
+                            </div>
+                            <div class="col s12">
+                                <a class="btn btn-calculate waves-effect waves-light">Calculate Math Expression</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="output">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        M.AutoInit();
+    </script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

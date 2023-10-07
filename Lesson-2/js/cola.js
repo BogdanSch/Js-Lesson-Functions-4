@@ -55,7 +55,7 @@ const compareSold = (colaA, colaB, isReverse = false) => {
   return isReverse ? -result : result;
 };
 
-console.log("Array: ");
+console.log("Basic array: ");
 printProducts(products);
 
 console.log("Sort by name reverse: ");
