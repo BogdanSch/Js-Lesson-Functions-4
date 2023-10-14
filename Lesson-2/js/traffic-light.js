@@ -1,27 +1,39 @@
 "use strict";
 
-function initTraficLight(name) {
+function initTrafficLight(name) {
   let color = "green";
-  let lightColor = () => {
-    let arr = {
-      name: name,
-      color: color == "green" ? "yellow" : "green",
-    };
-    return arr;
+
+  let changeLight = () => {
+    color = color === "green" ? "yellow" : "red";
   };
-  return lightColor;
+
+  let getLightColor = () => {
+    return color;
+  };
+
+  return {
+    changeLight,
+    getLightColor,
+    name,
+  };
 }
 
-let trafficLight = initTraficLight("One");
-console.log(trafficLight());
+let trafficLight = initTrafficLight("One");
 
-let trafficlight1 = trafficLight();
+console.log(trafficLight.name);
 console.log(
-  `%c ${trafficlight1.color}`,
-  `background: ${trafficlight1}; color: #bada55`
+  `%c ${trafficLight.getLightColor()}`,
+  `background: ${trafficLight.getLightColor()}; color: #bada55`
 );
-trafficlight1 = trafficLight();
+
+trafficLight.changeLight();
 console.log(
-  `%c ${trafficlight1.color}`,
-  `background: ${trafficlight1.color}; color: #bada55`
+  `%c ${trafficLight.getLightColor()}`,
+  `background: ${trafficLight.getLightColor()}; color: #bada55`
+);
+
+trafficLight.changeLight();
+console.log(
+  `%c ${trafficLight.getLightColor()}`,
+  `background: ${trafficLight.getLightColor()}; color: #bada55`
 );
